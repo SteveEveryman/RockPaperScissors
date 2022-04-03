@@ -1,7 +1,7 @@
 function computerPlay(){
     let computerMove = ['rock', 'paper', 'scissors'];
     let randomIndex = Math.floor(Math.random() * computerMove.length);
-    console.log(computerMove[randomIndex]);
+    console.log("Computer Move: " + computerMove[randomIndex]);
     return computerMove[randomIndex];
 }
 
@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection){
     }
     else
     {
-        return 'Something went horribly wrong. Check the code';
+        return 'Something went horribly wrong. Check your spelling.';
     }
 }
 
@@ -65,6 +65,6 @@ function game(){
     }
 }
 
-playerSelection = 'PAPER';
+playerSelection = window.prompt('Please enter your move for Rock Paper Scissors. Use correct spelling.');
 computerSelection = computerPlay();
 game();
