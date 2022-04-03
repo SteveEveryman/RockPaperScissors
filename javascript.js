@@ -4,16 +4,16 @@ function computerPlay(){
     return computerMove[randomIndex];
 }
 
-function gameSimulator(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
 
-    if (playerSelection = 'rock')
+    if (playerSelection == 'rock')
     {
-        if(computerSelection = 'rock')
+        if(computerSelection == 'rock')
         {
             return 'Two rocks is a draw!';
         }
-        else if (computerSelection = 'paper')
+        else if (computerSelection == 'paper')
         {
             return 'Paper beats rock you failure!';
         }
@@ -22,13 +22,13 @@ function gameSimulator(playerSelection, computerSelection){
             return 'Rock beats scissors, you win!'
         }
     }
-    else if (playerSelection = 'paper')
+    else if (playerSelection == 'paper')
     {
-        if(computerSelection = 'rock')
+        if(computerSelection == 'rock')
         {
             return 'Paper beats rock, you kick ass!';
         }
-        else if (computerSelection = 'paper')
+        else if (computerSelection == 'paper')
         {
             return 'Two papers is a draw!';
         }
@@ -37,13 +37,13 @@ function gameSimulator(playerSelection, computerSelection){
             return 'Paper is sliced in twain by scissors. FATALITY!';
         }
     }
-    else if (playerSelection = 'scissors')
+    else if (playerSelection == 'scissors')
     {
-        if(computerSelection = 'rock')
+        if(computerSelection == 'rock')
         {
             return 'Your puny scissors have been crushed';
         }
-        else if (computerSelection = 'paper')
+        else if (computerSelection == 'paper')
         {
             return 'You rip apart their fragile paper';
         }
@@ -58,5 +58,6 @@ function gameSimulator(playerSelection, computerSelection){
     }
 }
 
-playerSelection = 'rock'
+playerSelection = 'rock';
 computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
