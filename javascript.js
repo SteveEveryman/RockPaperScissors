@@ -1,6 +1,7 @@
 function computerPlay(){
     let computerMove = ['rock', 'paper', 'scissors'];
     let randomIndex = Math.floor(Math.random() * computerMove.length);
+    console.log(computerMove[randomIndex]);
     return computerMove[randomIndex];
 }
 
@@ -58,6 +59,12 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-playerSelection = 'rock';
+function game(){
+    for (let i = 0; i < 5; i++){
+        console.log(playRound(playerSelection, computerPlay())); 
+    }
+}
+
+playerSelection = 'PAPER';
 computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+game();
