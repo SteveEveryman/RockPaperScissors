@@ -12,14 +12,17 @@ function playRound(playerSelection, computerSelection){
     {
         if(computerSelection == 'rock')
         {
+            results.textContent = 'Two rocks is a draw!';
             return 'Two rocks is a draw!';
         }
         else if (computerSelection == 'paper')
         {
+            results.textContent = 'Paper beats rock you failure!';
             return 'Paper beats rock you failure!';
         }
         else
         {
+            results.textContent = 'Rock beats scissors, you win!'
             return 'Rock beats scissors, you win!'
         }
     }
@@ -27,14 +30,17 @@ function playRound(playerSelection, computerSelection){
     {
         if(computerSelection == 'rock')
         {
+            results.textContent = 'Paper beats rock, you kick ass!';
             return 'Paper beats rock, you kick ass!';
         }
         else if (computerSelection == 'paper')
         {
+            results.textContent = 'Two papers is a draw!';
             return 'Two papers is a draw!';
         }
         else
         {
+            results.textContent = 'Paper is sliced in twain by scissors. FATALITY!';
             return 'Paper is sliced in twain by scissors. FATALITY!';
         }
     }
@@ -42,29 +48,35 @@ function playRound(playerSelection, computerSelection){
     {
         if(computerSelection == 'rock')
         {
+            results.textContent = 'Your puny scissors have been crushed';
             return 'Your puny scissors have been crushed';
         }
         else if (computerSelection == 'paper')
         {
+            results.textContent = 'You rip apart their fragile paper';
             return 'You rip apart their fragile paper';
         }
         else
         {
+            results.textContent = 'Two scissors bounce harmlessly off each other. It is a draw!';
             return 'Two scissors bounce harmlessly off each other. It is a draw!';
         }
     }
     else
     {
+        results.textContent = 'Something went horribly wrong. Check your spelling.';
         return 'Something went horribly wrong. Check your spelling.';
     }
 }
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const results = document.querySelector('#results');
 
-rock.onclick = () => playRound('rock', computerPlay());
-paper.onclick = () => playRound('paper', computerPlay());
-scissors.onclick = () => playRound('scissors', computerPlay());
+rock.addEventListener('click', playRound('rock', computerPlay()));
+paper.addEventListener('click', playRound('paper', computerPlay()));
+scissors.addEventListener('click', playRound('scissors', computerPlay()));
+
 
 
 
