@@ -58,13 +58,19 @@ function playRound(playerSelection, computerSelection){
         return 'Something went horribly wrong. Check your spelling.';
     }
 }
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
-function game(){
-    for (let i = 0; i < 5; i++){
-        console.log(playRound(playerSelection, computerPlay())); 
-    }
-}
+rock.onclick = () => playRound('rock', computerPlay());
+paper.onclick = () => playRound('paper', computerPlay());
+scissors.onclick = () => playRound('scissors', computerPlay());
 
-playerSelection = window.prompt('Please enter your move for Rock Paper Scissors. Use correct spelling.');
-computerSelection = computerPlay();
-game();
+
+
+//function game(){
+   //for (let i = 0; i < 5; i++){
+   //     console.log(playRound(playerSelection, computerPlay())); 
+   // }
+//}
+
