@@ -5,6 +5,27 @@ function computerPlay(){
     return computerMove[randomIndex];
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+function scoreWatcher(){
+    if (playerScore == 5 || computerScore == 5){
+        if(playerScore > computerScore){
+            gameResults.textContent = `Player Score: ${playerScore}  Computer Score: ${computerScore}. You won!`;
+            playerScore = 0;
+            computerScore = 0;
+        }
+        else{
+            gameResults.textContent = `Player Score: ${playerScore}  Computer Score: ${computerScore}. You lost!`;
+            playerScore = 0;
+            computerScore = 0;
+        }
+    }
+    else{
+        gameResults.textContent = `Player Score: ${playerScore}  Computer Score: ${computerScore}`;
+    }
+}
+
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
 
@@ -72,6 +93,7 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const results = document.querySelector('#results');
+const gameResults = document.querySelector('#gameResults');
 
 rock.addEventListener('click', () => {
     playRound('rock', computerPlay());
