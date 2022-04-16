@@ -73,9 +73,15 @@ const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const results = document.querySelector('#results');
 
-rock.addEventListener('click', playRound('rock', computerPlay()));
-paper.addEventListener('click', playRound('paper', computerPlay()));
-scissors.addEventListener('click', playRound('scissors', computerPlay()));
+rock.addEventListener('click', () => {
+    playRound('rock', computerPlay());
+});
+paper.addEventListener('click', () => {
+    playRound('paper', computerPlay());
+});
+scissors.addEventListener('click', () => {
+    playRound('scissors', computerPlay());
+});
 
 
 
